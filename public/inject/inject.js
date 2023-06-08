@@ -104,7 +104,7 @@ const getOption = (filePath = "") => {
     language: "javascript",
     automaticLayout: true,
     lineNumbers: "off",
-    wordWrap: "on",
+    // wordWrap: "on",
     ...myOption,
   };
 };

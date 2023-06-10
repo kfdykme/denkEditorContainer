@@ -1,5 +1,3 @@
-@colorPrimary: #ffffff;
-
 @isDarkMode: true;
 @colorListChecked: if((@isDarkMode), #888888, #aaaaaa);
 @bgWhite: if((@isDarkMode), #333333, #fefefe);
@@ -13,12 +11,10 @@
 @colorPrimary: if((@isDarkMode), #333333, #ffffff);
 @colorPreview: if((@isDarkMode), #eeeeee, #2c3f51);
 @colorToc: if((@isDarkMode), #5c5c5c, #00000000);
-
-// * {
-//   font-family: "Helvetica Neue", Arial, "Hiragino Sans GB", "STHeiti",
-//     "Microsoft YaHei", "WenQuanYi Micro Hei", SimSun, Song, sans-serif;
-// }
-
+ 
+#editor_container_holder {
+  background: @bgWhite;
+}
 ::-webkit-scrollbar {
   display: none; /* Chrome Safari */
 }
@@ -58,13 +54,15 @@
 #editor_container_holder {
   overflow-y: hidden;
 }
+
+
 .lowbee-markdown-preview {
   font-size: 15.11111111111111px;
   color: @colorPreview;
   font-family: ui-monospace;
   padding: 1em;
   width: 90%;
-  background: @bgWhite;
+  // background: @bgWhite;
   display: inline-flex;
   flex-direction: column;
 
@@ -94,10 +92,7 @@
   li > p {
     margin: 0px;
   }
-
-  // li:hover {
-  // list-style-type: none;
-  // }
+ 
   .list-todo {
     padding-inline-start: 0;
     margin-block-start: 0;
@@ -135,11 +130,7 @@
   .ms-Checkbox-text {
     color: @colorPreview;
     padding-left: 16px;
-  }
-  // .ms-Checkbox-text:hover {
-  //     color: @colorPreview;
-  //     // font-size: large;
-  // }
+  } 
 
   .ms-Checkbox-checkbox {
     border-color: @colorInlineCode;
@@ -160,7 +151,6 @@
     margin: auto 0 !important;
 
     padding: 8px;
-    // background-color: #fefefe;
     width: 90%;
     background-image: linear-gradient(
       to right,
@@ -189,8 +179,10 @@
     width: 100%;
     word-break: break-all;
     line-height: 1.5;
+    transition-property: all;
+    transition-duration: 0.4s;
   }
-
+  
   img {
     width: 100%;
   }
@@ -217,10 +209,11 @@
     color: @linkColor;
     text-decoration: none;
     font-size: 14.222222222222221px;
+    transition-property: all;
+    transition-duration: 0.4s;
   }
 
   .toc {
-    // background: @colorToc;
     border-radius: 8px;
     border-color: @linkColor;
     border-top-width: 1px;
@@ -235,11 +228,9 @@
   }
 
   .note_tag {
-    // background: @bgNote;
     padding: 4px;
     padding-left: 16px;
     margin: 0px;
-    // border-radius: 8px;
     border-left: 4px solid #e27e7dee;
   }
 
@@ -257,13 +248,9 @@
     background-color: @colorInlineBGCode;
     border-radius: 4px;
     padding: 0px 4px;
-    // margin:4px;
   }
 
   .header-container-item {
-    // background-color: @ffbcd433;
-    // border: 0.1px solid #00bcd4;
-    // border-radius: 12px;
     padding: 8px;
   }
 
@@ -369,7 +356,6 @@
   }
 
 
-  // new style
   .markdown-newlayout-list-tree-node-container {
     display: flex;
     flex-direction: column;
@@ -403,7 +389,6 @@
         border:solid #00ffc4 0.5px;
         border-radius: 4px;
         margin: auto 4px;
-        // background-color: #00ffc4;
       }
     }
 

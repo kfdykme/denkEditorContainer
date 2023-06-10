@@ -483,11 +483,12 @@ class CoastTimer {
 const myct = new CoastTimer();
 
 const resolveColor = () => {
-  const colors = {};
+  // const colors = {};
   const darkMode = localStorage.getItem("isDarkMode") === "true";
-  colors["@isDarkMode"] = darkMode;
+  // colors["@isDarkMode"] = darkMode;
 
-  less.modifyVars(colors);
+  // less.modifyVars(colors);
+  
 };
 
 
@@ -670,15 +671,13 @@ const handleMarkdown = (content, previewContainer) => {
     );
 
   // render previewCOntainer header element
+  // const darkMode = localStorage.getItem("isDarkMode") == "true";
+  // const cssStyleFile = !darkMode
+  //   ? "solarized-light.min.css"
+  //   : "railscasts.min.css";
+  // const header = `<link rel="stylesheet" href="${cssStyleFile}">`;
+  // previewContainerHeaderElement.innerHTML = header;
 
-  const darkMode = localStorage.getItem("isDarkMode") == "true";
-  const cssStyleFile = !darkMode
-    ? "solarized-light.min.css"
-    : "railscasts.min.css";
-  const header = `<link rel="stylesheet" href="${cssStyleFile}">`;
-
-  resolveColor();
-  previewContainerHeaderElement.innerHTML = header;
 
   // previewContinaer header element finish -----------
 

@@ -104,10 +104,12 @@ const getOption = (filePath = "") => {
     language: "javascript",
     automaticLayout: true,
     lineNumbers: "off",
-    // wordWrap: "on",
+    wordWrap: "on",
     ...myOption,
   };
 };
+
+window.denkSetKeyValue('funcGetEditorOptio', getOption)
 
 const getEditor = (filePath = "") => {
   const id = window.denkGetKey("funcGetIdByFilePath")(filePath);
@@ -951,6 +953,11 @@ window.denkSetKeyValue("funcSwitchDarkMode", (isDarkMode, from) => {
     document.body.style.background = "#ffffff";
     // editor_header_bar && (editor_header_bar.style.background = '#efefef')
     editor.setTheme("denk");
+  }
+  if (isDarkMode) {
+    document.body.className = 'darkTheme'    
+  } else {
+      document.body.className = 'lightTheme'
   }
   window.denkGetKey("funcUpdateHeader")();
   let func = window.denkGetKey("funcMarkdownPreview");

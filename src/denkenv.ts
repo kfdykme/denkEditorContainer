@@ -1,7 +1,8 @@
 import * as monaco from "monaco-editor";
+import initTheme from "./theme/theme";
+
 
 const initDenkEnv = () => {
-  console.info("denkenv ok");
   const fakeWindow = window as any;
   fakeWindow.denkMap = new Map();
   fakeWindow.denkSetKeyValue = (key: string, value: any) => {
@@ -274,14 +275,7 @@ const initDenkEnv = () => {
     }
   );
 
-  // <script  src="/public/inject/inject.js"></script>
-  // <script  src="/public/inject/markdown.js"></script>
-  // const scriptInject = document.createElement("script");
-  // scriptInject.src = "/public/inject/inject.js";
-  // const scriptMarkdown = document.createElement("script");
-  // scriptMarkdown.src = "/public/inject/markdown.js";
-  // document.body.appendChild(scriptInject);
-  // document.body.appendChild(scriptMarkdown);
+  initTheme()
 }
 
 export default initDenkEnv
